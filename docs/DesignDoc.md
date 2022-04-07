@@ -152,13 +152,13 @@ Create tests for every possible execution path, for example, a method that has a
 one to test the if block, and the other to test the else block.
 Whenever creating a new instance of an object that has an interface to pair with it, utilize the interface to create the object. Specifically for mock objects. This follows the interface segregation principle in the SOLID principles, this allows the conformity of hiding an unneccessary code that the client does not need to know of.
 
-![Code Coverage](Code_Coverage_jadin.png)
+![Code Coverage](CodeCoverageAnalysis.png)
 
-Code Coverage: 94% achieved
+Code Coverage: 92% achieved
 
 Discussion:
 
 The team's coverage targets were the controllers, persistence as well as any objects that are utilized between the 2 tiers of classes. The reason for this is because by testing these classes, we can atleast determine whetehr or not an issue that arises in the entirety of the program is either in the front end or back end. With well created unit tests, we can determine that something must have happened in the front end or during the connection between the two ends.
 
-The target coverage goal was 90%, as shown above, we were able to not only achieve this but exceed this by 4%.
+The target coverage goal was 90%, as shown above, we were able to not only achieve this but exceed this by 2%.
 
