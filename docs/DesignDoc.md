@@ -99,10 +99,15 @@ The user begins at the home page with only the option to login to ensure a user 
 ### View Tier
 
 ![Admin Sequence Diagram](AdminEditSequenceDiagram.png)
-![Product Deletion Sequence Diagram](ProductDeletionSequenceDiagram.png)
+
 
 For an admin, in the user-login component, once the 'admin' username is typed in and the log in button is pressed, an http GET request will be sent to the backend to handle. Once a response is received, it will send you to the admin storefront. In the case of a user, that same process will also generate a GET request for the backend to handle, which will add the user to the users.json file if not already added.
-Once logged in as an admin, the inventory component will work with the product-details and product service to use http GET, POST and DELETE requests to manage the inventory. As a user the user-store, shopping-cart, user-product-view, and product-search components all use GET, POST, UPDATE and DELETE, and utilize the shopping-cart and user services to produce the user's view of the storefront and transfer to the product details and shopping cart views.
+Once logged in as an admin, the inventory component will work with the product-details and product service to use http GET, POST and DELETE requests to manage the inventory. 
+
+![Customer Sequence Diagram](CustomerSequenceDiagram.png)
+
+
+As a user the user-store, shopping-cart, user-product-view, and product-search components all use GET, POST, PUT, UPDATE and DELETE, and utilize the shopping-cart and user services to produce the user's view of the storefront and transfer to the product details and shopping cart views.
 
 
 ### ViewModel Tier
@@ -147,13 +152,13 @@ Create tests for every possible execution path, for example, a method that has a
 one to test the if block, and the other to test the else block.
 Whenever creating a new instance of an object that has an interface to pair with it, utilize the interface to create the object. Specifically for mock objects. This follows the interface segregation principle in the SOLID principles, this allows the conformity of hiding an unneccessary code that the client does not need to know of.
 
-![Code Coverage](Code_Coverage_jadin.png)
+![Code Coverage](CodeCoverageAnalysis.png)
 
-Code Coverage: 94% achieved
+Code Coverage: 92% achieved
 
 Discussion:
 
 The team's coverage targets were the controllers, persistence as well as any objects that are utilized between the 2 tiers of classes. The reason for this is because by testing these classes, we can atleast determine whetehr or not an issue that arises in the entirety of the program is either in the front end or back end. With well created unit tests, we can determine that something must have happened in the front end or during the connection between the two ends.
 
-The target coverage goal was 90%, as shown above, we were able to not only achieve this but exceed this by 4%.
+The target coverage goal was 90%, as shown above, we were able to not only achieve this but exceed this by 2%.
 
