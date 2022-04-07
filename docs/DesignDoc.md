@@ -99,10 +99,15 @@ The user begins at the home page with only the option to login to ensure a user 
 ### View Tier
 
 ![Admin Sequence Diagram](AdminEditSequenceDiagram.png)
-![Product Deletion Sequence Diagram](ProductDeletionSequenceDiagram.png)
+
 
 For an admin, in the user-login component, once the 'admin' username is typed in and the log in button is pressed, an http GET request will be sent to the backend to handle. Once a response is received, it will send you to the admin storefront. In the case of a user, that same process will also generate a GET request for the backend to handle, which will add the user to the users.json file if not already added.
-Once logged in as an admin, the inventory component will work with the product-details and product service to use http GET, POST and DELETE requests to manage the inventory. As a user the user-store, shopping-cart, user-product-view, and product-search components all use GET, POST, UPDATE and DELETE, and utilize the shopping-cart and user services to produce the user's view of the storefront and transfer to the product details and shopping cart views.
+Once logged in as an admin, the inventory component will work with the product-details and product service to use http GET, POST and DELETE requests to manage the inventory. 
+
+![Customer Sequence Diagram](CustomerSequenceDiagram.png)
+
+
+As a user the user-store, shopping-cart, user-product-view, and product-search components all use GET, POST, PUT, UPDATE and DELETE, and utilize the shopping-cart and user services to produce the user's view of the storefront and transfer to the product details and shopping cart views.
 
 
 ### ViewModel Tier
