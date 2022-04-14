@@ -14,45 +14,45 @@ geometry: margin=1in
 
 ## Executive Summary
 
-This project is to create a working e-store that allows customers to browse and purchase products that have been posted by an admin of the store.
+This project is to create a working e-store that allows customers to browse, purchase, and rate various types of beans that have been posted by an admin of the store.
 
 ### Purpose
 
-The purpose of the project is to host a place for consumers and sellers to have a market in order to transact with one another seeking to meet their demands.
+The purpose of the project is to host a place for consumers and sellers to have a market in order to sell and purchase beans, respectively.
 
 ### Glossary and Acronyms
-> _Provide a table of terms and acronyms._
 
 | Term | Definition |
 |------|------------|
 | SPA | Single Page |
-
+| HTML | HyperText Markup Language |
+| MVVM | Model–View–ViewModel architecture pattern |
+| CSS | Cascading Style Sheets |
 
 ## Requirements
 
 
 ### Definition of MVP
 
-A website configured as an e-store to give interactions between sellers and buyers as one party seeks a product that conforms to their likings, and the other sells there goods.
+A website configured as an e-store to allow interactions between sellers and buyers. Customers must be able to seek beans that they would like to purchase and the admins sell their goods.
 
 ### MVP Features
-As a customer I want to be able to view the products on the website in order to buy the product.
-As a customer I want to be able to edit my shopping cart in order to purchase products.
-As a customer I want to be able to search for products in order to quickly find the things I'm looking for.
-As a customer I want to be able to leave a review in order to give feedback.
+ * As a customer I want to be able to view beans on the website in order to buy the product.
+ * As a customer I want to be able to edit my shopping cart in order to purchase beans.
+ * As a customer I want to be able to search for beans in order to quickly find the ones I'm looking for.
+ * As a customer I want to be able to leave a rating on a bean in order to share my opinon on the quality of it.
 
-As an admin I want to be able to edit the inventory to see how I see fit in order to sell my products.
-As an admin I want to be able to be able to view the e-store in order to interact with it.
-As an admin I want to be able to view customer review in order to gain insight on customer reactions.
+ * As an admin I want to be able to edit the inventory to see how I see fit in order to sell my beans.
+ * As an admin I want to be able to be able to view the e-store in order to interact with it.
 
 ### Roadmap of Enhancements
-Product
-Inventory
-User
-Customer
-Shopping Cart
-Website
-Search Bar
+Product,
+Inventory,
+User,
+Customer,
+Shopping Cart,
+Website,
+Search Bar,
 Reviews
 
 ## Application Domain
@@ -61,7 +61,7 @@ This section describes the application domain.
 
 ![Domain Model](Domain_Analysis_jadin.png)
 
-The main components of the application domain can be seen as the following:
+The main components of the application domain are shown as the following:
 customer, inventory, product, shopping cart, admin.
 
 The admin is the overseer of the store, manipulating the inventory to how they see fit, adding or deleting products.
@@ -114,34 +114,45 @@ As a user the user-store, shopping-cart, user-product-view, and product-search c
 
 ![ViewModel UML Diagram](Controller_UML_Diagram_jadin.png)
 
-The ViewModel is the set of classes that take data passed in by the View, which is the front-end web store, and send it too the Model, that is the back-end data. In our project, you can expect to find classes called controllers (InventoryController, UserController, and ShoppingCartController) that recieve Http requests from the View. The controller classes take these requests and figure out what functions from the Model the View is requesting. These classes then call that function and return the data that was requested by the View. In the end, the ViewModel tier is used as a connection betwen Model and View through the use of the InventoryController, UserController, and ShoppingCartController classes.
+The ViewModel is the set of classes that take data passed in by the View, which is the front-end web store, and send it to the Model, that is the back-end data. In our project, you can expect to find classes called controllers (InventoryController, UserController, and ShoppingCartController) that recieve Http requests from the View. The controller classes take these requests and figure out what functions from the Model the View is requesting. These classes then call that function and return the data that was requested by the View. In the end, the ViewModel tier is used as a connection betwen Model and View through the use of the InventoryController, UserController, and ShoppingCartController classes.
 
 
 ### Model Tier
 
 ![Model Tier UML Diagram](Model_UML_Diagram_jadin.png)
 
-WIthin the model tier we can expect to find 2 types of components, the file data access objects and any neccessary object classes to help. Some of these neccessary objects are objects like the product class and users class. The product class creates objects that holds information on a singular product that is being sold in the e-store, whereas a user holds information about a user who interacts with the e-store. The fil data access objects are objects that takes care of saving, loading, and manipulation of any sort of data that is to be utilized throughout the entire e-store. Examples of such data can be seen as the inventory, or a customer's shopping cart. The inventory must be saved and loaded in order for users to see a constantly updated inventory of products. Shopping carts must be saved so that if a customer logs out, and then logs back in, they should still hacd ve their shopping cart and continue to add, delete, and overall edit the shopping cart.
+WIthin the model tier we can expect to find 2 types of components, the file data access objects and any neccessary object classes to help. Some of these neccessary objects are objects like the product class and users class. The product class creates objects that holds information on a singular product that is being sold in the e-store, whereas a user holds information about a user who interacts with the e-store. The file data access objects are objects that takes care of saving, loading, and manipulation of any sort of data that is to be utilized throughout the entire e-store. Examples of such data can be seen as the inventory, or a customer's shopping cart. The inventory must be saved and loaded in order for users to see a constantly updated inventory of products. Shopping carts must be saved so that if a customer logs out, and then logs back in, they should still have their shopping cart and continue to add, delete, and overall edit the shopping cart.
 
 ### Static Code Analysis/Design Improvements
-> _Discuss design improvements that you would make if the project were
-> to continue. These improvement should be based on your direct
-> analysis of where there are problems in the code base which could be
-> addressed with design changes, and describe those suggested design
-> improvements._
 
-> _With the results from the Static Code Analysis exercise, 
-> discuss the resulting issues/metrics measurements along with your analysis
-> and recommendations for further improvements. Where relevant, include 
-> screenshots from the tool and/or corresponding source code that was flagged._
+* Design Improvments
+  * Upgrading the 10% feature to include written reviews of beans
+  * A logout button instead of just having a login button
+  * Enhanced visuals, such as pictures of each bean
+  * Listing best-selling beans on the homepage of the site
+  * User SonarQube and SonarScanner reports to improve details in the code
+
+When utilizing the static code analysis offered by SonarQube and SonarScanner, it was clear that there are improvements that can be made regarding bugs and code smell. For the backend (SonarQube), the number of bugs were minor but we had 162 code smells. Most of the code smells were similar to the following:
+
+![Code Smell from SonarQube](CodeSmellExample.png)
+
+This was flagged mainly for readability, which doesn't affect performance, but could be improved for the future. On the other hand, the SonarScanner analysis came back with five bugs. Three of the five were the following:
+
+![Bug from SonarScanner](BugExample.png)
+
+Again, at the level we have worked on this project, this but isn't major as it just affects user experince. However, if we were to deploy our project at a higher level, this would definitely be something to improve.
 
 ## Testing
 
 ### Acceptance Testing
 
-6 User stories in total
-3 pass all of their acceptance criteria tests
-2 Have not had any testing yet
+Eight user stories in total, covering:
+* Buyers being able to add and delete beans from their shopping cart
+* Buyers being able search for beans in the store
+* Buyers being able to add a review to a bean
+* Admins being able to add, edit, and delete beans from the store
+
+All pass their acceptance criteria tests.
 
 ### Unit Testing and Code Coverage
 
@@ -158,7 +169,6 @@ Code Coverage: 92% achieved
 
 Discussion:
 
-The team's coverage targets were the controllers, persistence as well as any objects that are utilized between the 2 tiers of classes. The reason for this is because by testing these classes, we can atleast determine whetehr or not an issue that arises in the entirety of the program is either in the front end or back end. With well created unit tests, we can determine that something must have happened in the front end or during the connection between the two ends.
+The team's coverage targets were the controllers, persistence as well as any objects that are utilized between the 2 tiers of classes. The reason for this is because by testing these classes, we can atleast determine whether or not an issue that arises in the entirety of the program is either in the front end or back end. With well created unit tests, we can determine that an error must have happened in the front end or during the connection between the two ends.
 
 The target coverage goal was 90%, as shown above, we were able to not only achieve this but exceed this by 2%.
-

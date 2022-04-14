@@ -1,15 +1,6 @@
-<<<<<<< HEAD
-projectKey=estore
+projectKey=estore-app-sprint4
 serverUrl=http://localhost:9000
 serverVersion=9.3.0.51899
-dashboardUrl=http://localhost:9000/dashboard?id=estore
-ceTaskId=AX--SzEWPYpBuEiIKpcX
-ceTaskUrl=http://localhost:9000/api/ce/task?id=AX--SzEWPYpBuEiIKpcX
-=======
-projectKey=estore-app
-serverUrl=http://localhost:9000
-serverVersion=9.3.0.51899
-dashboardUrl=http://localhost:9000/dashboard?id=estore-app
-ceTaskId=AX--PBOpi9rY2juLzdnU
-ceTaskUrl=http://localhost:9000/api/ce/task?id=AX--PBOpi9rY2juLzdnU
->>>>>>> main
+dashboardUrl=http://localhost:9000/dashboard?id=estore-app-sprint4
+ceTaskId=AYAbp5-Ad6HvchfOM13W
+ceTaskUrl=http://localhost:9000/api/ce/task?id=AYAbp5-Ad6HvchfOM13W
